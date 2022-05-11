@@ -1,0 +1,95 @@
+:root {
+  /* --brand-green: #00856f;
+  --brand-green-light: #dce9e2;
+  --brand-green-light-02: #f7f9f9;
+  --brand-beige: #fffaf1;
+  --brand-green-hover: #00453a;
+
+  --gray-headline: #061800;
+  --gray-paragraph: #384633;
+  --white: #3e3e3e; */
+
+  --brand: 170;
+  --brand-light: 148;
+  --headline: 210;
+  --paragraph: 210;
+  --white: 0;
+
+  --brand-color: hsl(var(--brand), 100%, 26%);
+  --brand-light-color: hsl(var(--brand-light), 23%, 89%);
+
+  --headline-color: hsl(var(--headline), 11%, 15%);
+  --paragraph-color: hsl(var(--paragraph), 9%, 31%);
+
+  --white-color: hsl(var(--white), 0%, 100%);
+
+  font-size: 62.5%; /* 1rem = 10px */
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "DM Sans", sans-serif;
+  font-size: 1.6rem;
+
+  text-align: center;
+}
+
+h1 {
+  font-size: 3.4rem;
+  line-height: 130%;
+  text-align: center;
+  color: var(--headline-color);
+
+  margin-bottom: 2.4rem;
+}
+
+h4 {
+  font-size: 1.4rem;
+  line-height: 150%;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--brand-color);
+
+  margin-bottom: 1.6rem;
+}
+
+p {
+  font-size: 1.8rem;
+  line-height: 150%;
+  text-align: center;
+  color: var(--paragraph-color);
+
+  margin-bottom: 3.2rem;
+}
+
+button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.6rem;
+
+  font-weight: 1.4rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--white-color);
+
+  width: 26.3rem;
+  height: 6.2rem;
+
+  border: none;
+  border-radius: 4rem;
+  
+  background-color: var(--brand-color);
+
+  margin: 0 auto 6rem;
+}
+
+header {
+  width: 37.5rem;
+  margin: 4.1rem auto;
+}
