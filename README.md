@@ -14,7 +14,7 @@ TODO:
   - [x] Day 01;
   - [x] Day 02;
   - [x] Day 03;
-  - [ ] Day 04;
+  - [x] Day 04;
   - [ ] Day 05;
 - [ ] Change to be a dentist site;
 - [ ] Change to React + Next.js;

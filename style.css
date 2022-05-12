@@ -1,20 +1,6 @@
 /* ==== GENERAL ===== */
 :root {
-  /* --brand-green: #00856f;
-  --brand-green-light: #dce9e2;
-  --brand-green-light-02: #f7f9f9;
-  --brand-beige: #fffaf1;
-  --brand-green-hover: #00453a;
-
-  --gray-headline: #061800;
-  --gray-paragraph: #384633;
-  --white: #3e3e3e; */
-
   --brand: 170;
-  --brand-light: 148;
-  --brand-light-02: 180;
-  --brand-dark: 170;
-
   --second-brand: 39;
 
   --headline: 210;
@@ -23,9 +9,9 @@
   --white: 0;
 
   --brand-color: hsl(var(--brand), 100%, 26%);
-  --brand-light-color: hsl(var(--brand-light), 23%, 89%);
-  --brand-light-02-color: hsl(var(--brand-light-02), 14%, 97%);
-  --brand-dark-color: hsl(var(--brand-dark), 100%, 14%);
+  --brand-light-color: hsl(calc(var(--brand) - 22), 23%, 89%);
+  --brand-light-02-color: hsl(calc(var(--brand) + 10), 14%, 97%);
+  --brand-dark-color: hsl(var(--brand), 100%, 14%);
 
   --brand-second-color: hsl(var(--second-brand), 100%, 97%);
 
@@ -132,6 +118,37 @@ section content p {
   color: var(--paragraph-color);
 }
 
+.button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.6rem;
+
+  width: fit-content;
+
+  font-weight: 1.4rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: var(--white-color);
+
+  border: none;
+  border-radius: 4rem;
+
+  background-color: var(--brand-color);
+
+  transition: background-color 0.2s linear;
+
+  margin: 0 auto 6rem;
+  padding: 1.6rem 3.2rem;
+
+  cursor: pointer;
+}
+
+.button:hover {
+  background-color: var(--brand-dark-color);
+}
+
 /* ==== NAV ===== */
 
 #navbar {
@@ -231,17 +248,18 @@ section content p {
   color: var(--white-color);
 }
 
-#navbar .menu > a {
-  font-size: 1.8rem;
-  line-height: 2.3rem;
-  font-weight: 700;
+#navbar .menu .button {
   color: var(--brand-color);
 
-  border-radius: 4rem;
-
-  padding: 1.6rem 3.2rem;
-
   background-color: var(--white-color);
+
+  margin-bottom: 8rem;
+}
+
+#navbar .menu .button:hover {
+  color: var(--white-color);
+
+  background-color: var(--brand-dark-color);
 
   margin-bottom: 8rem;
 }
@@ -320,36 +338,6 @@ section content p {
   object-position: 0 2rem;
 }
 
-#home button {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 1.6rem;
-
-  font-weight: 1.4rem;
-  font-weight: 700;
-  text-transform: uppercase;
-  color: var(--white-color);
-
-  width: 26.3rem;
-  height: 6.2rem;
-
-  border: none;
-  border-radius: 4rem;
-
-  background-color: var(--brand-color);
-
-  transition: background-color 0.2s linear;
-
-  margin: 0 auto 6rem;
-
-  cursor: pointer;
-}
-
-#home button:hover {
-  background-color: var(--brand-dark-color);
-}
-
 /* ==== STATS ===== */
 
 #home .stats {
@@ -415,7 +403,15 @@ section content p {
   padding: 2.4rem;
 }
 
-/* ==== SERVICES ===== */
+#services .card .icon svg circle {
+  fill: var(--brand-light-color);
+}
+
+#services .card .icon svg path {
+  stroke: var(--brand-color);
+}
+
+/* ==== ABOUT US ===== */
 
 #about-us {
   text-align: left;
@@ -429,4 +425,102 @@ section content p {
 
 #about-us .content img {
   width: 100%;
+}
+
+/* ==== CONTACT ===== */
+
+#contact {
+  text-align: left;
+
+  background-color: var(--white-color);
+}
+
+#contact .content ul {
+  display: flex;
+  flex-direction: column;
+  gap: 1.6rem;
+  margin-bottom: 3.2rem;
+}
+
+#contact .content ul li {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+}
+
+#contact .content ul li a {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+
+  text-decoration: none;
+  color: inherit;
+}
+
+#contact .content svg path {
+  stroke: var(--brand-color);
+}
+
+#contact .button {
+  margin-left: 0;
+}
+
+#contact img {
+  width: 100%;
+}
+
+/* ==== CONTACT ===== */
+
+#footer {
+  background-color: var(--brand-color);
+
+  padding: 6rem 0;
+
+  text-align: left;
+}
+
+#footer .logo svg {
+  margin-bottom: 2.4rem;
+}
+
+#footer p {
+  line-height: 2;
+  color: var(--brand-second-color);
+
+  margin-bottom: 3.2rem;
+}
+
+#footer .social-links {
+  display: flex;
+  gap: 3.2rem;
+}
+
+#footer .social-links svg {
+  stroke: var(--brand-second-color);
+}
+
+/* ==== BACK TO TOP BUTTON ===== */
+
+#back-to-top-button {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+
+  transition: opacity 0.2s, transform 0.2s;
+
+  transform: translateY(100%);
+
+  opacity: 0;
+  visibility: hidden;
+}
+
+#back-to-top-button.show {
+  transform: translateY(0);
+
+  opacity: 1;
+  visibility: visible;
+}
+
+#back-to-top-button svg circle {
+  fill: var(--brand-color);
 }
