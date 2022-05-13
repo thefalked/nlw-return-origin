@@ -10,11 +10,11 @@ Later this project will be changed to be a dentist site and after that changed t
 
 TODO:
 
-- [ ] Finish Project;
+- [x] Finish Project;
   - [x] Day 01;
   - [x] Day 02;
   - [x] Day 03;
   - [x] Day 04;
-  - [ ] Day 05;
+  - [x] Day 05;
 - [ ] Change to be a dentist site;
 - [ ] Change to React + Next.js;

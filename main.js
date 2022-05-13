@@ -18,9 +18,40 @@ function toggleBackToTopButton() {
   }
 }
 
+function toggleClassOnNavLink() {
+  const menus = Array.from(
+    document.querySelectorAll("#navbar .menu ul:first-child li a")
+  ).map((menu) => menu.getAttribute("href"));
+
+  const sectionElements = document.querySelectorAll(`${menus.join(", ")}`);
+  const navbarHeight = document.querySelector("#navbar").offsetHeight;
+
+  sectionElements.forEach((sectionElement, index) => {
+    const sectionTop = sectionElement.offsetTop;
+    const sectionBottom = sectionTop + sectionElement.offsetHeight;
+
+    const menu = menus[index];
+
+    const screenShowsMoreSection = window.scrollY > sectionTop - navbarHeight;
+    const screenShowsLessSection =
+      window.scrollY < sectionBottom - navbarHeight;
+
+    if (screenShowsMoreSection && screenShowsLessSection) {
+      document
+        .querySelector(`#navbar .menu a[href="${menu}"]`)
+        .classList.add("active");
+    } else {
+      document
+        .querySelector(`#navbar .menu a[href="${menu}"]`)
+        .classList.remove("active");
+    }
+  });
+}
+
 function onScroll() {
   toggleScrollNavBar();
   toggleBackToTopButton();
+  toggleClassOnNavLink();
 }
 
 onScroll();
@@ -38,7 +69,9 @@ const showNavBar = document.querySelectorAll(
 );
 
 showNavBar.forEach((element) => {
-  element.addEventListener("click", toggleNavBar);
+  if (window.matchMedia("(max-width: 1024px)").matches) {
+    element.addEventListener("click", toggleNavBar);
+  }
 });
 
 ScrollReveal({

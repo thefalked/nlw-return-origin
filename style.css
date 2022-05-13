@@ -71,7 +71,7 @@ ul {
 }
 
 .wrapper {
-  width: 37.5rem;
+  width: min(50rem, 100%);
 
   margin-inline: auto;
   padding-inline: 2.4rem;
@@ -126,7 +126,7 @@ section content p {
 
   width: fit-content;
 
-  font-weight: 1.4rem;
+  font-size: 1.4rem;
   font-weight: 700;
   text-transform: uppercase;
   text-decoration: none;
@@ -160,7 +160,7 @@ section content p {
 
   height: var(--nav-height);
 
-  padding: 1.6rem 2.4rem;
+  padding: 1.6rem 0;
 
   transition: background-color 0.2s linear;
 
@@ -260,8 +260,6 @@ section content p {
   color: var(--white-color);
 
   background-color: var(--brand-dark-color);
-
-  margin-bottom: 8rem;
 }
 
 #navbar .menu .social-links {
@@ -313,7 +311,7 @@ section content p {
 #home::before {
   content: "";
   display: block;
-  height: calc(108rem + var(--nav-height));
+  height: calc(76% + var(--nav-height));
 
   position: absolute;
   inset: 0;
@@ -331,7 +329,7 @@ section content p {
 #home img {
   display: block;
 
-  width: 26.4rem;
+  width: min(26.4rem, 90%);
 
   margin: 0 auto;
 
@@ -347,7 +345,7 @@ section content p {
   justify-content: center;
   gap: 6rem;
 
-  width: 32.7rem;
+  width: min(32.7rem, 100%);
 
   padding: 4rem 0;
   margin: 0 auto;
@@ -411,6 +409,11 @@ section content p {
   stroke: var(--brand-color);
 }
 
+#services .card h3 {
+  font-size: 2.4rem;
+  line-height: 3.1rem;
+}
+
 /* ==== ABOUT US ===== */
 
 #about-us {
@@ -420,10 +423,12 @@ section content p {
 }
 
 #about-us .content p {
+  line-height: 150%;
+
   margin-bottom: 6rem;
 }
 
-#about-us .content img {
+#about-us img {
   width: 100%;
 }
 
@@ -523,4 +528,306 @@ section content p {
 
 #back-to-top-button svg circle {
   fill: var(--brand-color);
+}
+
+/* ==== DESKTOP ===== */
+
+@media (min-width: 1024px) {
+  /* ==== RESET ===== */
+  body {
+    overflow: initial;
+  }
+
+  #navbar .wrapper *,
+  :is(#navbar .wrapper) :is(.section-links, .menu) :is(*) {
+    margin: 0;
+    padding: 0;
+
+    position: initial;
+    inset: initial;
+    z-index: initial;
+
+    font-size: initial;
+    font-weight: initial;
+    line-height: initial;
+    color: initial;
+
+    display: initial;
+    flex-direction: initial;
+    justify-content: initial;
+    align-items: initial;
+
+    transform: initial;
+
+    background-color: initial;
+
+    visibility: initial;
+    opacity: initial;
+
+    border: initial;
+  }
+
+  /* ==== GERAL ===== */
+
+  section {
+    padding-block: 16rem;
+  }
+
+  section header h1 {
+    font-size: 5.2rem;
+  }
+
+  section header h2 {
+    font-size: 4rem;
+  }
+
+  .wrapper {
+    width: min(112rem, 100%);
+    display: grid;
+  }
+
+  .col-a {
+    grid-area: header;
+  }
+
+  .col-b {
+    grid-area: img;
+  }
+
+  /* ==== NAVBAR ===== */
+
+  #navbar :is(#show-navbar, #hide-navbar, .menu .social-links) {
+    display: none;
+  }
+
+  #navbar {
+    padding: 1.5rem 0;
+  }
+
+  #navbar .menu {
+    display: flex;
+    justify-content: space-between;
+
+    width: 60%;
+  }
+
+  #navbar .menu .section-links {
+    display: flex;
+    align-items: center;
+    gap: 2.7rem;
+  }
+
+  #navbar .menu .section-links li {
+    height: 100%;
+  }
+
+  #navbar .menu .section-links a {
+    position: relative;
+
+    font-size: 1.6rem;
+    font-weight: 400;
+    line-height: 2.1rem;
+
+    display: flex;
+    align-items: center;
+
+    height: 100%;
+
+    padding: 0.5rem;
+
+    color: var(--brand-color);
+    opacity: 0.7;
+  }
+
+  #navbar .menu .section-links a:is(:hover, .active) {
+    font-weight: 700;
+
+    opacity: 1;
+  }
+
+  #navbar .menu .section-links a::after {
+    content: "";
+
+    position: absolute;
+    bottom: calc(-1.5rem + 1px);
+    left: 0;
+
+    display: block;
+
+    width: 0%;
+    height: 2px;
+
+    transition: width 0.2s;
+
+    background-color: var(--brand-color);
+  }
+
+  #navbar .menu .section-links a:is(:hover, .active)::after {
+    width: 100%;
+  }
+
+  #navbar .menu .button {
+    color: var(--brand-color);
+
+    padding: 1rem 2.4rem;
+
+    border: 1px solid var(--brand-color);
+    border-radius: 4rem;
+  }
+  /* ==== NAV SCROLLED ===== */
+
+  #navbar.scroll {
+    background-color: var(--brand-color);
+  }
+
+  #navbar.scroll .wrapper #show-navbar svg path {
+    stroke: var(--white-color);
+  }
+
+  #navbar.scroll .wrapper .logo svg path {
+    fill: var(--white-color);
+  }
+
+  #navbar.scroll .menu .section-links a {
+    color: var(--brand-light-02-color);
+  }
+
+  #navbar.scroll .menu .section-links a:after {
+    background-color: var(--brand-light-02-color);
+  }
+
+  #navbar.scroll .menu .button {
+    border-color: var(--white-color);
+    color: var(--white-color);
+  }
+
+  #navbar.scroll .menu .button:hover {
+    border-color: transparent;
+  }
+
+  /* ==== HOME ===== */
+
+  #home .wrapper {
+    grid-template-columns: 60.5rem 1fr;
+    grid-template-areas:
+      "header img"
+      "stats stats";
+  }
+
+  #home .col-a {
+    align-self: center;
+  }
+
+  #home .col-a * {
+    text-align: left;
+  }
+
+  #home .col-a .button {
+    margin: 0;
+  }
+
+  #home .col-b img {
+    width: 80%;
+  }
+
+  #home .wrapper .stats {
+    grid-area: stats;
+    flex-direction: row;
+
+    width: 100%;
+
+    padding: 6rem 0;
+  }
+
+  #home .wrapper .stats {
+    grid-area: stats;
+    flex-direction: row;
+    gap: 0;
+
+    width: 100%;
+
+    padding: 6rem 0;
+  }
+
+  #home .wrapper .stat {
+    flex: 1;
+  }
+
+  #home .wrapper .stat + .stat {
+    border-left: 1px solid var(--brand-color);
+  }
+
+  #home::before {
+    height: calc(96% - var(--nav-height));
+  }
+
+  /* ==== SERVICES ===== */
+
+  #services .wrapper h2 {
+    width: 45%;
+
+    margin-inline: auto;
+  }
+
+  #services .wrapper .cards {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 4rem;
+  }
+
+  /* ==== ABOUT US ===== */
+
+  #about-us .wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas: "img header";
+    place-items: center;
+    gap: 6.7rem;
+  }
+
+  #about-us .wrapper h2 {
+    width: 85%;
+  }
+
+  #about-us .wrapper p {
+    margin-bottom: 0;
+  }
+
+  /* ==== CONTACT ===== */
+
+  #contact .wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas: "header img";
+    place-items: center;
+  }
+
+  #contact .wrapper h2 {
+    width: 70%;
+  }
+
+  #contact .wrapper .button {
+    margin-bottom: 0;
+  }
+
+  /* ==== FOOTER ===== */
+
+  #footer {
+    padding: 8rem 0;
+  }
+
+  #footer .wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas: "header img";
+  }
+
+  #footer .wrapper p {
+    margin-bottom: 0;
+  }
+
+  #footer .col-b {
+    align-self: center;
+    justify-self: self-end;
+  }
 }
