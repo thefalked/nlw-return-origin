@@ -17,4 +17,5 @@ TODO:
   - [x] Day 04;
   - [x] Day 05;
 - [x] Change to be a dentist site;
+- [x] Deploy on vercel
 - [ ] Change to React + Next.js;
