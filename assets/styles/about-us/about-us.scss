@@ -1,0 +1,36 @@
+#about-us {
+  text-align: left;
+  background-color: var(--brand-second-color);
+
+  .content p {
+    line-height: 150%;
+    margin-bottom: 6rem;
+  }
+
+  img {
+    width: 100%;
+    border-radius: 2rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  #about-us .wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas: "img header";
+    place-items: center;
+    gap: 6.7rem;
+
+    h2 {
+      width: 85%;
+    }
+
+    p {
+      margin-bottom: 0;
+    }
+
+    img {
+      height: 80%;
+    }
+  }
+}

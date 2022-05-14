@@ -1,0 +1,45 @@
+#footer {
+  background-color: var(--brand-color);
+  padding: 6rem 0;
+  text-align: left;
+
+  .logo svg {
+    margin-bottom: 2.4rem;
+  }
+
+  p {
+    line-height: 2;
+    color: var(--brand-second-color);
+    margin-bottom: 3.2rem;
+  }
+
+  .social-links {
+    display: flex;
+    gap: 3.2rem;
+
+    svg path {
+      stroke: var(--brand-second-color);
+    }
+  }
+}
+
+@media (min-width: 1024px) {
+  #footer {
+    padding: 8rem 0;
+
+    .wrapper {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-template-areas: "header img";
+
+      p {
+        margin-bottom: 0;
+      }
+    }
+
+    .col-b {
+      align-self: center;
+      justify-self: self-end;
+    }
+  }
+}

@@ -1,0 +1,57 @@
+#services {
+  header h2 {
+    margin-bottom: 6rem;
+  }
+
+  .cards {
+    display: flex;
+    flex-direction: column;
+    gap: 3.2rem;
+  }
+
+  .card {
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 1.6rem;
+    text-align: left;
+    border: 1px solid var(--brand-light-color);
+    border-radius: 0.6rem;
+    background-color: var(--white-color);
+    padding: 2.4rem;
+
+    .icon svg {
+      circle {
+        fill: var(--brand-light-color);
+      }
+
+      path {
+        stroke: var(--brand-color);
+      }
+    }
+
+    h3 {
+      font-size: 2.4rem;
+      line-height: 3.1rem;
+    }
+
+    p {
+      line-height: 150%;
+    }
+  }
+}
+
+@media (min-width: 1024px) {
+  #services .wrapper {
+    h2 {
+      width: 45%;
+      margin-inline: auto;
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+    }
+  }
+}

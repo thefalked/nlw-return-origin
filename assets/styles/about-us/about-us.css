@@ -1,0 +1,36 @@
+#about-us {
+  text-align: left;
+  background-color: var(--brand-second-color);
+}
+
+#about-us .content p {
+  line-height: 150%;
+  margin-bottom: 6rem;
+}
+
+#about-us img {
+  width: 100%;
+  border-radius: 2rem;
+}
+
+@media (min-width: 1024px) {
+  #about-us .wrapper {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 1fr 1fr;
+        grid-template-columns: 1fr 1fr;
+        grid-template-areas: "img header";
+    place-items: center;
+    gap: 6.7rem;
+  }
+  #about-us .wrapper h2 {
+    width: 85%;
+  }
+  #about-us .wrapper p {
+    margin-bottom: 0;
+  }
+  #about-us .wrapper img {
+    height: 80%;
+  }
+}
+/*# sourceMappingURL=about-us.css.map */

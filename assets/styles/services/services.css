@@ -1,0 +1,65 @@
+#services header h2 {
+  margin-bottom: 6rem;
+}
+
+#services .cards {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 3.2rem;
+}
+
+#services .card {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 1.6rem;
+  text-align: left;
+  border: 1px solid var(--brand-light-color);
+  border-radius: 0.6rem;
+  background-color: var(--white-color);
+  padding: 2.4rem;
+}
+
+#services .card .icon svg circle {
+  fill: var(--brand-light-color);
+}
+
+#services .card .icon svg path {
+  stroke: var(--brand-color);
+}
+
+#services .card h3 {
+  font-size: 2.4rem;
+  line-height: 3.1rem;
+}
+
+#services .card p {
+  line-height: 150%;
+}
+
+@media (min-width: 1024px) {
+  #services .wrapper h2 {
+    width: 45%;
+    margin-inline: auto;
+  }
+  #services .wrapper .cards {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 1fr 1fr;
+        grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+  }
+}
+/*# sourceMappingURL=services.css.map */

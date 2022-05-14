@@ -1,0 +1,284 @@
+#navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: var(--nav-height);
+  padding: 1.6rem 0;
+  -webkit-transition: background-color 0.2s linear;
+  transition: background-color 0.2s linear;
+  z-index: 2;
+}
+
+#navbar .wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+#navbar a {
+  text-decoration: none;
+}
+
+#navbar button {
+  border: none;
+  background: none;
+  cursor: pointer;
+}
+
+#navbar .logo svg path {
+  fill: var(--headline-color);
+}
+
+#navbar .logo svg path:last-child {
+  fill: var(--brand-color);
+}
+
+#navbar .wrapper #show-navbar path {
+  stroke: var(--brand-color);
+}
+
+#navbar.scroll {
+  background-color: var(--brand-color);
+}
+
+#navbar.scroll .wrapper #show-navbar svg path {
+  stroke: var(--white-color);
+}
+
+#navbar.scroll .wrapper .logo svg path {
+  fill: var(--white-color);
+}
+
+#navbar button:last-child {
+  display: none;
+}
+
+#navbar .menu {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: var(--brand-color);
+  -webkit-transition: -webkit-transform 0.25s;
+  transition: -webkit-transform 0.25s;
+  transition: transform 0.25s;
+  transition: transform 0.25s, -webkit-transform 0.25s;
+  -webkit-transform: translateY(100%);
+          transform: translateY(100%);
+}
+
+#navbar .menu .section-links {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 4.8rem;
+  margin-bottom: 4.8rem;
+}
+
+#navbar .menu .section-links a {
+  font-size: 2.4rem;
+  line-height: 3.1rem;
+  font-weight: 700;
+  color: var(--white-color);
+}
+
+#navbar .menu .button {
+  color: var(--brand-color);
+  background-color: var(--white-color);
+  margin-bottom: 8rem;
+}
+
+#navbar .menu .button:hover {
+  color: var(--white-color);
+  background-color: var(--brand-dark-color);
+}
+
+#navbar .menu .social-links {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 3.2rem;
+}
+
+#navbar .social-links svg {
+  stroke: var(--brand-second-color);
+}
+
+.menu-expanded {
+  overflow: hidden;
+}
+
+.menu-expanded > :not(#navbar) {
+  visibility: hidden;
+}
+
+.menu-expanded #navbar .logo svg path {
+  fill: var(--white-color);
+}
+
+.menu-expanded #navbar #show-navbar {
+  display: none;
+}
+
+.menu-expanded #navbar #hide-navbar {
+  display: block;
+}
+
+.menu-expanded #navbar #hide-navbar svg path {
+  stroke: var(--white-color);
+}
+
+.menu-expanded #navbar .menu {
+  -webkit-transform: translateY(0);
+          transform: translateY(0);
+}
+
+@media (min-width: 1024px) {
+  #navbar .wrapper *,
+  :is(#navbar .wrapper) :is(.section-links, .menu) :is(*) {
+    margin: 0;
+    padding: 0;
+    position: initial;
+    inset: initial;
+    z-index: initial;
+    font-size: initial;
+    font-weight: initial;
+    line-height: initial;
+    color: initial;
+    display: initial;
+    -webkit-box-orient: initial;
+    -webkit-box-direction: initial;
+        -ms-flex-direction: initial;
+            flex-direction: initial;
+    -webkit-box-pack: initial;
+        -ms-flex-pack: initial;
+            justify-content: initial;
+    -webkit-box-align: initial;
+        -ms-flex-align: initial;
+            align-items: initial;
+    -webkit-transform: initial;
+            transform: initial;
+    background-color: initial;
+    visibility: initial;
+    opacity: initial;
+    border: initial;
+  }
+  #navbar {
+    padding: 1.5rem 0;
+  }
+  #navbar :is(#show-navbar, #hide-navbar, .menu .social-links) {
+    display: none;
+  }
+  #navbar .menu {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    width: 60%;
+  }
+  #navbar .menu .section-links {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    gap: 2.7rem;
+  }
+  #navbar .menu .section-links li {
+    height: 100%;
+  }
+  #navbar .menu .section-links a {
+    position: relative;
+    font-size: 1.6rem;
+    font-weight: 400;
+    line-height: 2.1rem;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    height: 100%;
+    padding: 0.5rem;
+    color: var(--brand-color);
+    opacity: 0.7;
+  }
+  #navbar .menu .section-links a:is(:hover, .active) {
+    font-weight: 700;
+    opacity: 1;
+  }
+  #navbar .menu .section-links a::after {
+    content: "";
+    position: absolute;
+    bottom: calc(-1.5rem + 1px);
+    left: 0;
+    display: block;
+    width: 0%;
+    height: 2px;
+    -webkit-transition: width 0.2s;
+    transition: width 0.2s;
+    background-color: var(--brand-color);
+  }
+  #navbar .menu .section-links a:is(:hover, .active)::after {
+    width: 100%;
+  }
+  #navbar .menu .button {
+    color: var(--brand-color);
+    padding: 1rem 2.4rem;
+    border: 1px solid var(--brand-color);
+    border-radius: 4rem;
+    font-size: 1.4rem;
+  }
+  #navbar.scroll {
+    background-color: var(--brand-color);
+  }
+  #navbar.scroll .wrapper #show-navbar svg path {
+    stroke: var(--white-color);
+  }
+  #navbar.scroll .wrapper .logo svg path {
+    fill: var(--white-color);
+  }
+  #navbar.scroll .menu .section-links a {
+    color: var(--brand-light-02-color);
+  }
+  #navbar.scroll .menu .section-links a:after {
+    background-color: var(--brand-light-02-color);
+  }
+  #navbar.scroll .menu .button {
+    border-color: var(--white-color);
+    color: var(--white-color);
+  }
+  #navbar.scroll .menu .button:hover {
+    border-color: transparent;
+  }
+}
+/*# sourceMappingURL=navbar.css.map */
